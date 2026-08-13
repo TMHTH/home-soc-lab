@@ -179,13 +179,13 @@ The following screenshots document the detection workflow:
 
 ![Failed Login Events](../screenshots/failed-logins/01-failed-login-events.PNG)
 
-![Bruteforce Summary](../screenshots/failed-logins/02-bruteforce-summary.png)
+![Bruteforce Summary](../screenshots/failed-logins/02-bruteforce-summary.PNG)
 
-![Bruteforce Summary Details](../screenshots/failed-logins/02-bruteforce-summary-details.png)
+![Bruteforce Summary Details](../screenshots/failed-logins/02-bruteforce-summary-details.PNG)
 
-![Bruteforce 5-Minute Detection](../screenshots/failed-logins/03-bruteforce-5min-detection.png)
+![Bruteforce 5-Minute Detection](../screenshots/failed-logins/03-bruteforce-5min-detection.PNG)
 
-![Bruteforce Alert Triggered](../screenshots/failed-logins/04-bruteforce-alert-triggered.png)
+![Bruteforce Alert Triggered](../screenshots/failed-logins/04-bruteforce-alert-triggered.PNG)
 
 
 ---
