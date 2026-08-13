@@ -1,0 +1,102 @@
+# Windows Universal Forwarder Setup
+
+## Overview
+
+The Windows SOC client uses the Splunk Universal Forwarder to collect Windows Event Logs and forward them to the Splunk Enterprise server.
+
+## System Role
+
+* Operating System: Windows 10
+* Role: Monitored SOC Endpoint
+* SOC-LAB IP: `192.168.56.10`
+* Splunk Server: `192.168.56.20`
+* Destination Port: `9997`
+
+## Universal Forwarder
+
+The Splunk Universal Forwarder was installed on the Windows endpoint.
+
+The forwarder sends collected event data to:
+
+```text
+192.168.56.20:9997
+```
+
+The configured forwarding destination can be checked from an elevated Command Prompt:
+
+```cmd
+cd "C:\Program Files\SplunkUniversalForwarder\bin"
+splunk list forward-server
+```
+
+The Splunk server should appear as an active forwarding destination.
+
+## Windows Event Log Inputs
+
+The following Windows Event Logs are currently collected:
+
+* Security
+* System
+* Application
+
+The configuration is stored in:
+
+```text
+C:\Program Files\SplunkUniversalForwarder\etc\system\local\inputs.conf
+```
+
+Example configuration:
+
+```ini
+[WinEventLog://Security]
+disabled = 0
+
+[WinEventLog://System]
+disabled = 0
+
+[WinEventLog://Application]
+disabled = 0
+```
+
+## Restarting the Forwarder
+
+After changing the configuration, the Universal Forwarder can be restarted from an elevated Command Prompt:
+
+```cmd
+cd "C:\Program Files\SplunkUniversalForwarder\bin"
+splunk restart
+```
+
+The Windows service can also be checked with:
+
+```cmd
+sc query SplunkForwarder
+```
+
+## Connectivity
+
+The monitored endpoint communicates with the Splunk server over the isolated SOC-LAB network:
+
+```text
+Windows SOC Client
+192.168.56.10
+        |
+        | TCP 9997
+        v
+Splunk Server
+192.168.56.20
+```
+
+## Validation
+
+Successful forwarding was confirmed by searching Splunk:
+
+```spl
+index=* host=*
+```
+
+Windows Security events were also successfully identified in Splunk, including Event ID `4625`.
+
+## Result
+
+The Windows endpoint successfully forwards Windows Event Logs to Splunk Enterprise for centralized monitoring and detection.
