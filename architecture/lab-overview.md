@@ -89,32 +89,6 @@ SPL Detection Logic
 Alert / Investigation
 ```
 
-## Current Detection Workflow
-
-The first implemented detection monitors failed Windows authentication attempts.
-
-```text
-Failed Login
-     |
-     v
-Windows Event ID 4625
-     |
-     v
-Universal Forwarder
-     |
-     v
-Splunk Enterprise
-     |
-     v
-5-Minute Aggregation
-     |
-     v
-Threshold >= 5 Events
-     |
-     v
-Splunk Alert
-```
-
 ## Network Separation
 
 The virtual machines use a dedicated internal VirtualBox network for SOC traffic.
