@@ -187,7 +187,6 @@ The following screenshots document the detection workflow:
 
 ![Bruteforce Alert Triggered](../screenshots/failed-logins/05-bruteforce-alert-triggered.PNG)
 
-screenshots/failed-logins/02-bruteforce-detection-summary.PNG
 ---
 
 ## Result
