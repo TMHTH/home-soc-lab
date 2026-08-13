@@ -177,11 +177,11 @@ If the activity appears suspicious:
 
 The following screenshots document the detection workflow:
 
-* `screenshots/01-failed-logins/01-failed-login-events.png`
-* `screenshots/02-failed-logins/02-bruteforce-summary.png`
-* `screenshots/03-failed-logins/02-bruteforce-summary-details.png`
-* `screenshots/04-failed-logins/03-bruteforce-5min-detection.png`
-* `screenshots/05-failed-logins/04-bruteforce-alert-triggered.png`
+* `screenshots/failed-logins/01-failed-login-events.png`
+* `screenshots/failed-logins/02-bruteforce-summary.png`
+* `screenshots/failed-logins/02-bruteforce-summary-details.png`
+* `screenshots/failed-logins/03-bruteforce-5min-detection.png`
+* `screenshots/failed-logins/04-bruteforce-alert-triggered.png`
 
 ---
 
