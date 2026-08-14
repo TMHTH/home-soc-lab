@@ -189,18 +189,9 @@ If the activity is unexpected:
 
 ## Evidence
 
-Relevant screenshots are stored under:
+![PowerShell Discovery Commands Detected](../screenshots/suspicious-powershell/01-discovery-commands-detected.png)
 
-```text
-screenshots/suspicious-powershell/
-```
-
-Evidence:
-
-```text
-01-discovery-commands-detected.png
-02-powershell-alert-triggered.png
-```
+![PowerShell Alert Triggered](../screenshots/suspicious-powershell/02-powershell-alert-triggered.PNG)
 
 ---
 
