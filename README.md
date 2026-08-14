@@ -17,10 +17,10 @@ A virtualized Security Operations Center lab for hands-on practice with Windows 
 * Centralized Windows Event Log collection
 * First detection use case: repeated failed Windows logins
 * Automated Splunk alerting
+* Suspicious PowerShell activity detection
 
 ### Planned
 
-* Suspicious PowerShell activity detection
 * Network reconnaissance detection
 * Additional Windows telemetry
 * Incident investigation documentation
