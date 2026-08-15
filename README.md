@@ -155,22 +155,43 @@ The lab detection monitors a controlled outbound connection from the Windows end
 
 ```text
 home-soc-lab/
-├── README.md
 ├── architecture/
 │   └── lab-overview.md
-├── setup/
-│   ├── splunk-server.md
-│   └── windows-forwarder.md
+│
 ├── detection/
 │   ├── failed-logins-5min.md
-│   ├── suspicious-powershell.md
 │   ├── network-reconnaissance.md
+│   ├── suspicious-powershell.md
 │   └── sysmon-network-connection.md
-└── screenshots/
-    ├── failed-logins/
-    ├── suspicious-powershell/
-    ├── network-reconnaissance/
-    └── sysmon/
+│
+├── screenshots/
+│   ├── failed-logins/
+│   │   ├── 01-failed-login-events.PNG
+│   │   ├── 04-bruteforce-5min-detection.PNG
+│   │   └── 05-bruteforce-alert-triggered.PNG
+│   │
+│   ├── network-reconnaissance/
+│   │   ├── 01-suricata-nmap-flow.PNG
+│   │   ├── 02-portscan-detection-splunk.PNG
+│   │   └── 03-portscan-alert-triggered.PNG
+│   │
+│   ├── suspicious-powershell/
+│   │   ├── 01-discovery-commands-detected.png
+│   │   └── 02-powershell-alert-triggered.PNG
+│   │
+│   └── sysmon/
+│       ├── 01-sysmon-process-events.PNG
+│       ├── 02-sysmon-network-connection.PNG
+│       └── 03-sysmon-network-alert-triggered.PNG
+│
+├── setup/
+        ├── splunk-server.md
+        ├── windows-forwarder.md
+        ├── suricata.md
+        ├── kali-attacker.md
+        └── sysmon.md
+│
+└── README.md
 ```
 
 ---
