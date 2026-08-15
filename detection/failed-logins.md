@@ -28,6 +28,22 @@ The Windows Security logs are collected using the Splunk Universal Forwarder and
 
 ---
 
+## Initial Search
+
+The raw failed-login events can be identified with:
+
+```spl
+index=* EventCode=4625
+```
+
+This confirms that failed authentication attempts are successfully collected by Splunk.
+
+### Failed Login Events
+
+![Failed Login Events](../screenshots/failed-logins/01-failed-login-events.PNG)
+
+---
+
 ## Detection Objective
 
 The goal is to detect at least:
@@ -41,18 +57,6 @@ on the monitored Windows endpoint.
 This threshold is intentionally simple and designed for the lab environment.
 
 In a production environment, the threshold would need to be tuned based on normal authentication behavior and potential false positives.
-
----
-
-## Initial Search
-
-The raw failed-login events can be identified with:
-
-```spl
-index=* EventCode=4625
-```
-
-This confirms that failed authentication attempts are successfully collected by Splunk.
 
 ---
 
@@ -76,6 +80,12 @@ The search performs the following steps:
 2. Groups events into 5-minute time buckets.
 3. Counts failed authentication events by host and source network address.
 4. Returns only results where at least 5 failed logins occurred.
+
+### Detection Result
+
+The test activity exceeded the configured threshold and was successfully detected.
+
+![Bruteforce 5-Minute Detection](../screenshots/failed-logins/04-bruteforce-5min-detection.PNG)
 
 ---
 
@@ -127,6 +137,10 @@ The alert triggers when the search returns at least one result matching the dete
 
 The alert was successfully triggered during testing.
 
+### Alert Result
+
+![Bruteforce Alert Triggered](../screenshots/failed-logins/05-bruteforce-alert-triggered.PNG)
+
 ---
 
 ## Investigation Guidance
@@ -170,18 +184,6 @@ If the activity appears suspicious:
 6. Lock or disable the account if necessary.
 7. Review surrounding endpoint activity for additional indicators.
 8. Increase monitoring of the affected account or endpoint.
-
----
-
-## Evidence
-
-The following screenshots document the detection workflow:
-
-![Failed Login Events](../screenshots/failed-logins/01-failed-login-events.PNG)
-
-![Bruteforce 5-Minute Detection](../screenshots/failed-logins/04-bruteforce-5min-detection.PNG)
-
-![Bruteforce Alert Triggered](../screenshots/failed-logins/05-bruteforce-alert-triggered.PNG)
 
 ---
 
