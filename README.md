@@ -185,11 +185,11 @@ home-soc-lab/
 │       └── 03-sysmon-network-alert-triggered.PNG
 │
 ├── setup/
-        ├── splunk-server.md
-        ├── windows-forwarder.md
-        ├── suricata.md
         ├── kali-attacker.md
-        └── sysmon.md
+        ├── splunk-server.md
+        ├── suricata.md
+        ├── sysmon.md
+        └── windows-forwarder.md
 │
 └── README.md
 ```
